@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: cd18481a98e77344ca4460cf7273513a
+timeCreated: 1518966426
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - groundCheck: {instanceID: 0}
+  - shield1: {fileID: 1557967573730442, guid: 5116e59bfa5836c4b8629a76fa3824bf, type: 2}
+  - shield2: {fileID: 1353177778516886, guid: 11cfce894de327d439199fa222330193, type: 2}
+  - shield3: {fileID: 1371054169347684, guid: 4e32c864e85bfb04d97507bf68dddbbe, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

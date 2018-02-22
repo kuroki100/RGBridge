@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6bf662b68f5a6d7418c64a3fbea63f33
+timeCreated: 1519083000
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RedShield: {fileID: 1557967573730442, guid: 5116e59bfa5836c4b8629a76fa3824bf,
+      type: 2}
+  - GreenShield: {fileID: 1353177778516886, guid: 11cfce894de327d439199fa222330193,
+      type: 2}
+  - BlueShield: {fileID: 1371054169347684, guid: 4e32c864e85bfb04d97507bf68dddbbe,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
