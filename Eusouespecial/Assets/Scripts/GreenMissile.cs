@@ -35,6 +35,14 @@ public class GreenMissile : MonoBehaviour
         rb.velocity = transform.right * speed;
     }
 
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            Destroy(this.gameObject, 0.05f);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "green")

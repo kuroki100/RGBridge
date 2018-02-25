@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
+    //move
 
     Rigidbody2D myRB;
     SpriteRenderer myRenderer;
     bool facingRight = true;
     Animator myAnim;
     bool canMove = true;
+    public float speed = 10;
 
-    //move
-
-    public float speed;
-
-    //jump
+    //jump e grounded check
 
     bool grounded = false;
     float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
     public Transform groundCheck;
-    public float jumpPower;
+    public float jumpPower = 7;
 
     //escudos
-    public GameObject shield1;
-    public GameObject shield2;
-    public GameObject shield3;
+
+    public GameObject RedShield;
+    public GameObject GreenShield;
+    public GameObject BlueShield;
 
 
     //cooldown dos escudos
@@ -34,26 +34,61 @@ public class PlayerController : MonoBehaviour {
     public float delayGreen = 1;
     public float delayBlue = 1;
     float timeStamp;
+    public float sec = 1;
 
+    //Knockback publics
+    public GameObject RedMissile;
+
+    public float knockback = 1000;
+
+    Vector2 Direction;
+
+
+    //slow publics
+    public float SlowDuration = 1f;
+
+    //root publics
+    public float RootDuration = 1f;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+
+        // componentes para o move e jump
+
         myRB = GetComponent<Rigidbody2D>();
+
         myRenderer = GetComponent<SpriteRenderer>();
+
         myAnim = GetComponent<Animator>();
 
         //shield inicia desativado.
 
-        shield1.gameObject.SetActive(false);
-        shield2.gameObject.SetActive(false);
-        shield3.gameObject.SetActive(false);
+        RedShield.gameObject.SetActive(false);
+
+        GreenShield.gameObject.SetActive(false);
+
+        BlueShield.gameObject.SetActive(false);
+
+        //Co routine dos cooldowns
+
+        StartCoroutine(RedCooldown());
+
+        StartCoroutine(GreenCooldown());
+
+        StartCoroutine(BlueCooldown());
     }
 
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
+        //vector2 knockback
 
-        if(grounded && Input.GetAxis("Jump") > 0)
+        Direction = RedMissile.transform.position - myRB.transform.position;
+
+        //jump and move
+        if (grounded && Input.GetAxis("Jump") > 0)
         {
             myAnim.SetBool("isGrounded", false);
             myRB.velocity = new Vector2(myRB.velocity.x, 0f);
@@ -83,44 +118,77 @@ public class PlayerController : MonoBehaviour {
             myAnim.SetFloat("MoveSpeed", 0);
         }
 
-        //atalhos dos shields
-        if (Input.GetKeyDown(KeyCode.Q) && (Time.time >= timeStamp))
+        //atalhos dos shields + cooldows das teclas para evitar spam
+
+        if (Input.GetKeyDown(KeyCode.Z) && (Time.time >= timeStamp))
         {
-            shield1.gameObject.SetActive(true);
+            RedShield.gameObject.SetActive(true);
             timeStamp = Time.time + delayRed;
         }
-        if (Input.GetKeyDown(KeyCode.E) && (Time.time >= timeStamp))
+        if (Input.GetKeyDown(KeyCode.X) && (Time.time >= timeStamp))
         {
-            shield2.gameObject.SetActive(true);
+            GreenShield.gameObject.SetActive(true);
             timeStamp = Time.time + delayGreen;
         }
-        if (Input.GetKeyDown(KeyCode.R) && (Time.time >= timeStamp))
+        if (Input.GetKeyDown(KeyCode.C) && (Time.time >= timeStamp))
         {
-            shield3.gameObject.SetActive(true);
+            BlueShield.gameObject.SetActive(true);
             timeStamp = Time.time + delayBlue;
-
         }
     }
 
-    //se atingido por um collider com a tag deadly o shield é desativado
+    // programação dos ccs e colisão dos misseis com os escudos
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        if (other.tag == "deadlyRed")
+
+        //missil vermelho
+
+        if (coll.gameObject.tag == "deadlyRed")
         {
-            shield1.gameObject.SetActive(false);
+            Debug.Log("Boom");
+            RedShield.gameObject.SetActive(false);
+
+            myRB.AddForce(Direction.normalized * -knockback);
+        }
+        else if (RedShield.gameObject.activeInHierarchy == true)
+        {
+            RedShield.gameObject.SetActive(false);
         }
 
-        if (other.tag == "deadlyGreen")
+        //missil verde
+
+        if (coll.gameObject.tag == "deadlyGreen")
         {
-            shield2.gameObject.SetActive(false);
+            Debug.Log("Can't Jump");
+
+            jumpPower = 0;
+
+            GreenShield.gameObject.SetActive(false);
+
+            StartCoroutine(RootCooldown());
+        }
+        else if (GreenShield.gameObject.activeInHierarchy == true)
+        {
+            GreenShield.gameObject.SetActive(false);   
         }
 
-        if (other.tag == "deadlyBlue")
-        {
-            shield3.gameObject.SetActive(false);
-        }
+        //missil azul
 
+        if (coll.gameObject.tag == "deadlyBlue")
+        {
+            Debug.Log("Slow");
+
+            speed = speed * 0.5f;
+
+            StartCoroutine(SlowCooldown());
+
+            BlueShield.gameObject.SetActive(false);
+        }
+        else if (BlueShield.gameObject.activeInHierarchy == true)
+        {
+            BlueShield.gameObject.SetActive(false);
+        }
     }
 
     void Flip()
@@ -132,5 +200,60 @@ public class PlayerController : MonoBehaviour {
     public void toggleCanMove()
     {
         canMove = !canMove;
+    }
+
+    //duração do CC missil verde
+
+    IEnumerator RootCooldown()
+    {
+        if (Time.time >= RootDuration)
+        {
+            yield return new WaitForSeconds(RootDuration);
+            jumpPower = 7;
+        }
+        
+    }
+
+    //duração do CC missil azul
+
+    IEnumerator SlowCooldown()
+    {
+        if (Time.time >= SlowDuration)
+        {
+            yield return new WaitForSeconds(SlowDuration);
+            speed = 10;
+        }
+    }
+
+    //cooldown dos escudos quando ativados
+
+    IEnumerator RedCooldown()
+    {
+        if (gameObject.activeInHierarchy == true)
+        {
+            yield return new WaitForSeconds(sec);
+            RedShield.gameObject.SetActive(false);
+        }
+        yield return StartCoroutine(RedCooldown());
+    }
+
+    IEnumerator GreenCooldown()
+    {
+        if (gameObject.activeInHierarchy == true)
+        {
+            yield return new WaitForSeconds(sec);
+            GreenShield.gameObject.SetActive(false);
+        }
+        yield return StartCoroutine(GreenCooldown());
+    }
+
+    IEnumerator BlueCooldown()
+    {
+        if (gameObject.activeInHierarchy == true)
+        {
+            yield return new WaitForSeconds(sec);
+            BlueShield.gameObject.SetActive(false);
+        }
+        yield return StartCoroutine(BlueCooldown());
     }
 }

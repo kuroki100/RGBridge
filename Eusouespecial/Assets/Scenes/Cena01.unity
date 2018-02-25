@@ -284,7 +284,6 @@ GameObject:
   m_Component:
   - component: {fileID: 422032846}
   - component: {fileID: 422032848}
-  - component: {fileID: 422032849}
   - component: {fileID: 422032845}
   - component: {fileID: 422032844}
   - component: {fileID: 422032843}
@@ -426,27 +425,17 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 619516234}
   jumpPower: 7
-  shield1: {fileID: 486633077}
-  shield2: {fileID: 1532827203}
-  shield3: {fileID: 84952325}
-  delayRed: 1
-  delayGreen: 1
-  delayBlue: 1
---- !u!114 &422032849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 422032842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf662b68f5a6d7418c64a3fbea63f33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   RedShield: {fileID: 486633077}
   GreenShield: {fileID: 1532827203}
   BlueShield: {fileID: 84952325}
+  delayRed: 1
+  delayGreen: 1
+  delayBlue: 1
   sec: 1
+  RedMissile: {fileID: 1040401091907558, guid: ccbe8e93e3b32ed489829fb366a6a0be, type: 2}
+  knockback: 1000
+  SlowDuration: 2.5
+  RootDuration: 2
 --- !u!1001 &472348019
 Prefab:
   m_ObjectHideFlags: 0
@@ -530,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619516233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.665, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422032846}
@@ -618,8 +607,8 @@ GameObject:
   m_Component:
   - component: {fileID: 928932439}
   - component: {fileID: 928932442}
-  - component: {fileID: 928932441}
   - component: {fileID: 928932440}
+  - component: {fileID: 928932441}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -674,18 +663,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &928932441
-BoxCollider:
+--- !u!61 &928932441
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928932438}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 1340b74293d76f9438abaef6010c07fc, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000023841858, y: -0.000000029802322}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.99999994, y: 0.99999994}
+  m_EdgeRadius: 0
 --- !u!33 &928932442
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -736,8 +738,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1015411199}
   - component: {fileID: 1015411202}
-  - component: {fileID: 1015411201}
   - component: {fileID: 1015411200}
+  - component: {fileID: 1015411201}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -792,18 +794,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1015411201
-BoxCollider:
+--- !u!61 &1015411201
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015411198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 1340b74293d76f9438abaef6010c07fc, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000047683716, y: -0.000000029802322}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.99999994}
+  m_EdgeRadius: 0
 --- !u!33 &1015411202
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1133,15 +1148,44 @@ Prefab:
         type: 2}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 4e6cee16b2c1d2b418e13e3c03c56dc1, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 50375081223017194, guid: ccbe8e93e3b32ed489829fb366a6a0be,
         type: 2}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 50375081223017194, guid: ccbe8e93e3b32ed489829fb366a6a0be,
         type: 2}
       propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114635357471184330, guid: ccbe8e93e3b32ed489829fb366a6a0be,
+        type: 2}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 422032844}
+    - target: {fileID: 114635357471184330, guid: ccbe8e93e3b32ed489829fb366a6a0be,
+        type: 2}
+      propertyPath: Direction.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114635357471184330, guid: ccbe8e93e3b32ed489829fb366a6a0be,
+        type: 2}
+      propertyPath: Direction.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114635357471184330, guid: ccbe8e93e3b32ed489829fb366a6a0be,
+        type: 2}
+      propertyPath: Direction.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 50375081223017194, guid: ccbe8e93e3b32ed489829fb366a6a0be,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040401091907558, guid: ccbe8e93e3b32ed489829fb366a6a0be, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

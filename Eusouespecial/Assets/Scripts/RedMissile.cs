@@ -5,12 +5,10 @@ using UnityEngine;
 public class RedMissile : MonoBehaviour
 {
 
-
     public float speed = 5;
     public float rotatingSpeed = 200;
     GameObject target;
     Rigidbody2D rb;
-
 
     // Use this for initialization
     void Start()
@@ -26,6 +24,7 @@ public class RedMissile : MonoBehaviour
 
         Vector2 point2Target = (Vector2)transform.position - (Vector2)target.transform.position;
 
+
         point2Target.Normalize();
 
         float value = Vector3.Cross(point2Target, transform.right).z;
@@ -33,13 +32,15 @@ public class RedMissile : MonoBehaviour
         rb.angularVelocity = rotatingSpeed * value;
 
         rb.velocity = transform.right * speed;
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player")
-            Destroy(this.gameObject, 0.01f);
+        {
+            Destroy(this.gameObject, 0.05f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
