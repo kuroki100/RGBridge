@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollows : MonoBehaviour {
-
+    public Transform followcamera;
     public Transform target;
     public float smoothing = 5f;
     public float boundX = 5.2f;
     public float boundY = 5.2f;
+
+    public Transform leftBottom;
+    public Transform rightTop;
 
     Vector3 offset;
 
@@ -15,11 +18,13 @@ public class CameraFollows : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         offset = transform.position - target.position;
 		
 	}
-	
-	void FixedUpdate () {
+
+    void FixedUpdate ()
+    {
 
         Vector3 targetCamPos = target.position + offset;
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
@@ -59,6 +64,13 @@ public class CameraFollows : MonoBehaviour {
             }
         }
 
-    }
+        Vector3 novaPos = transform.position;
+        novaPos.x = Mathf.Clamp(followcamera.position.x, leftBottom.position.x
+            , rightTop.position.x);
+        novaPos.y = Mathf.Clamp(followcamera.position.y, leftBottom.position.y
+            , rightTop.position.y);
 
+        transform.position = novaPos;
+        
+    }
 }

@@ -11,6 +11,7 @@ TagManager:
   - deadlyRed
   - deadlyGreen
   - deadlyBlue
+  - CanHook
   layers:
   - Default
   - TransparentFX
@@ -24,11 +25,11 @@ TagManager:
   - Red
   - Green
   - Blue
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - RedShield
+  - GreenShield
+  - BlueShield
+  - Rope
   - 
   - 
   - 

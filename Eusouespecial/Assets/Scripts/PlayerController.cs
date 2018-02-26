@@ -4,43 +4,39 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //move
+    //move, jump e groundcheck para evitar um flappybird
 
     Rigidbody2D myRB;
     SpriteRenderer myRenderer;
     bool facingRight = true;
     Animator myAnim;
     bool canMove = true;
-    public float speed = 10;
+    public bool grounded = false;
 
-    //jump e grounded check
 
-    bool grounded = false;
-    float groundCheckRadius = 0.2f;
+    public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
     public Transform groundCheck;
-    public float jumpPower = 7;
+
+    public float speed = 10;
+    public float jumpPower = 5;
 
     //escudos
-
     public GameObject RedShield;
     public GameObject GreenShield;
     public GameObject BlueShield;
 
-
-    //cooldown dos escudos
-
+    //public cooldowns dos escudos
     public float delayRed = 1;
     public float delayGreen = 1;
     public float delayBlue = 1;
-    float timeStamp;
-    public float sec = 1;
+    public float activeTimeR = 1;
+    public float activeTimeG = 1;
+    public float activeTimeB = 1;
 
     //Knockback publics
-    public GameObject RedMissile;
-
     public float knockback = 1000;
-
+    public Rigidbody2D Rm;
     Vector2 Direction;
 
 
@@ -55,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
 
         // componentes para o move e jump
-
         myRB = GetComponent<Rigidbody2D>();
 
         myRenderer = GetComponent<SpriteRenderer>();
@@ -63,31 +58,21 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator>();
 
         //shield inicia desativado.
-
         RedShield.gameObject.SetActive(false);
 
         GreenShield.gameObject.SetActive(false);
 
         BlueShield.gameObject.SetActive(false);
 
-        //Co routine dos cooldowns
-
-        StartCoroutine(RedCooldown());
-
-        StartCoroutine(GreenCooldown());
-
-        StartCoroutine(BlueCooldown());
+        //vector2 missil vermelho
+        Direction = Rm.transform.position + myRB.transform.position;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        //vector2 knockback
-
-        Direction = RedMissile.transform.position - myRB.transform.position;
-
-        //jump and move
+        //ground check and jump
         if (grounded && Input.GetAxis("Jump") > 0)
         {
             myAnim.SetBool("isGrounded", false);
@@ -96,11 +81,12 @@ public class PlayerController : MonoBehaviour
             grounded = false;
         }
 
+
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         myAnim.SetBool("isGrounded", grounded);
 
-
+        //move
         float move = Input.GetAxis("Horizontal");
         if (canMove)
         {
@@ -118,77 +104,28 @@ public class PlayerController : MonoBehaviour
             myAnim.SetFloat("MoveSpeed", 0);
         }
 
-        //atalhos dos shields + cooldows das teclas para evitar spam
-
-        if (Input.GetKeyDown(KeyCode.Z) && (Time.time >= timeStamp))
+        //atalhos dos shields + cooldowns das teclas para evitar spam
+        if (Input.GetKeyDown(KeyCode.Z) && (Time.time >= delayRed))
         {
             RedShield.gameObject.SetActive(true);
-            timeStamp = Time.time + delayRed;
+            delayRed = 1;
         }
-        if (Input.GetKeyDown(KeyCode.X) && (Time.time >= timeStamp))
+        if (Input.GetKeyDown(KeyCode.X) && (Time.time >= delayGreen))
         {
             GreenShield.gameObject.SetActive(true);
-            timeStamp = Time.time + delayGreen;
+            delayGreen = 1;
         }
-        if (Input.GetKeyDown(KeyCode.C) && (Time.time >= timeStamp))
+        if (Input.GetKeyDown(KeyCode.C) && (Time.time >= delayBlue))
         {
             BlueShield.gameObject.SetActive(true);
-            timeStamp = Time.time + delayBlue;
-        }
-    }
-
-    // programação dos ccs e colisão dos misseis com os escudos
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-
-        //missil vermelho
-
-        if (coll.gameObject.tag == "deadlyRed")
-        {
-            Debug.Log("Boom");
-            RedShield.gameObject.SetActive(false);
-
-            myRB.AddForce(Direction.normalized * -knockback);
-        }
-        else if (RedShield.gameObject.activeInHierarchy == true)
-        {
-            RedShield.gameObject.SetActive(false);
+            delayBlue = 1;
         }
 
-        //missil verde
+        StartCoroutine(RedCooldown());
 
-        if (coll.gameObject.tag == "deadlyGreen")
-        {
-            Debug.Log("Can't Jump");
+        StartCoroutine(GreenCooldown());
 
-            jumpPower = 0;
-
-            GreenShield.gameObject.SetActive(false);
-
-            StartCoroutine(RootCooldown());
-        }
-        else if (GreenShield.gameObject.activeInHierarchy == true)
-        {
-            GreenShield.gameObject.SetActive(false);   
-        }
-
-        //missil azul
-
-        if (coll.gameObject.tag == "deadlyBlue")
-        {
-            Debug.Log("Slow");
-
-            speed = speed * 0.5f;
-
-            StartCoroutine(SlowCooldown());
-
-            BlueShield.gameObject.SetActive(false);
-        }
-        else if (BlueShield.gameObject.activeInHierarchy == true)
-        {
-            BlueShield.gameObject.SetActive(false);
-        }
+        StartCoroutine(BlueCooldown());
     }
 
     void Flip()
@@ -202,20 +139,69 @@ public class PlayerController : MonoBehaviour
         canMove = !canMove;
     }
 
-    //duração do CC missil verde
+    // programação dos ccs e colisão dos misseis com os escudos
+    void OnCollisionEnter2D(Collision2D coll)
+    {
 
+        //missil vermelho
+        if (coll.gameObject.tag == "deadlyRed")
+        {
+            Debug.Log("Boom");
+            myRB.AddForce(Direction * -knockback, ForceMode2D.Impulse);
+            RedShield.gameObject.SetActive(false);
+        }
+        else if ((coll.gameObject.tag == "deadlyRed") && (RedShield.activeInHierarchy == true))
+        {
+            RedShield.gameObject.SetActive(false);
+        }
+
+        //missil verde
+        if (coll.gameObject.tag == "deadlyGreen")
+        {
+            Debug.Log("Can't Jump");
+
+            jumpPower = 0;
+
+            GreenShield.gameObject.SetActive(false);
+
+            StartCoroutine(RootCooldown());
+        }
+        else if ((coll.gameObject.tag == "deadlyGreen") && (GreenShield.activeInHierarchy == true))
+        {
+            GreenShield.gameObject.SetActive(false);
+        }
+
+        //missil azul
+        if (coll.gameObject.tag == "deadlyBlue")
+        {
+            Debug.Log("Slow");
+
+            speed = speed * 0.5f;
+
+            StartCoroutine(SlowCooldown());
+
+            BlueShield.gameObject.SetActive(false);
+        }
+        else if ((coll.gameObject.tag == "deadlyBlue") && (BlueShield.activeInHierarchy == true))
+        {
+            BlueShield.gameObject.SetActive(false);
+        }
+    }
+
+
+
+    //duração do CC missil verde
     IEnumerator RootCooldown()
     {
         if (Time.time >= RootDuration)
         {
             yield return new WaitForSeconds(RootDuration);
-            jumpPower = 7;
+            jumpPower = 5;
         }
         
     }
 
     //duração do CC missil azul
-
     IEnumerator SlowCooldown()
     {
         if (Time.time >= SlowDuration)
@@ -225,35 +211,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //cooldown dos escudos quando ativados
-
+    //Duração dos escudos ativos
     IEnumerator RedCooldown()
     {
-        if (gameObject.activeInHierarchy == true)
+        if (RedShield.gameObject.activeInHierarchy == true)
         {
-            yield return new WaitForSeconds(sec);
+            yield return new WaitForSeconds(activeTimeR);
             RedShield.gameObject.SetActive(false);
         }
-        yield return StartCoroutine(RedCooldown());
+        
     }
 
     IEnumerator GreenCooldown()
     {
-        if (gameObject.activeInHierarchy == true)
+        if (GreenShield.gameObject.activeInHierarchy == true)
         {
-            yield return new WaitForSeconds(sec);
+            yield return new WaitForSeconds(activeTimeG);
             GreenShield.gameObject.SetActive(false);
         }
-        yield return StartCoroutine(GreenCooldown());
+       
     }
 
     IEnumerator BlueCooldown()
     {
-        if (gameObject.activeInHierarchy == true)
+        if (BlueShield.gameObject.activeInHierarchy == true)
         {
-            yield return new WaitForSeconds(sec);
+            yield return new WaitForSeconds(activeTimeB);
             BlueShield.gameObject.SetActive(false);
         }
-        yield return StartCoroutine(BlueCooldown());
+       
     }
 }

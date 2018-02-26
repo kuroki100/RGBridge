@@ -7,7 +7,7 @@ public class BlueMissile : MonoBehaviour {
 
     public float speed = 5;
     public float rotatingSpeed = 200;
-    public GameObject target;
+    GameObject target;
 
     Rigidbody2D rb;
 

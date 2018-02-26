@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4129391670083322}
   - component: {fileID: 212869973741641254}
   - component: {fileID: 58842447962471466}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BlueShield
   m_TagString: blue
   m_Icon: {fileID: 0}

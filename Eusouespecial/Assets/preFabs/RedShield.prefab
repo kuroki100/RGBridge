@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212485694466317044}
   - component: {fileID: 58442772314308230}
   - component: {fileID: 95150699327612396}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RedShield
   m_TagString: red
   m_Icon: {fileID: 0}
