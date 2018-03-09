@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuInicial.unity
+    guid: cd6b7cb38aeb86a4aa576701f846470b
+  - enabled: 1
+    path: Assets/Scenes/Scoreboard.unity
+    guid: 258ba7854fb3ca8469afdc7c17908ce1
+  - enabled: 1
+    path: Assets/Scenes/Cena01.unity
+    guid: fd22aea7597b7d44d9b3a51d2a5c4a2c
+  - enabled: 1
+    path: Assets/Scenes/MenuVitoria.unity
+    guid: c15341d8f230d964aa0f2ba4d3949b35
+  - enabled: 1
+    path: Assets/Scenes/MenuDerrota.unity
+    guid: df0c5f29c43baf443bbbbbc6f892edd3
