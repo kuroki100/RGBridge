@@ -218,7 +218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 146526710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97168ce8038fde4b850fa336ad568ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 48400056da989a649b0f71151182e2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pontuacao: {fileID: 269745070}
@@ -622,7 +622,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1438130310}
-  - component: {fileID: 1438130309}
   - component: {fileID: 1438130311}
   m_Layer: 0
   m_Name: SceneManager
@@ -631,18 +630,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1438130309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1438130308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4ea2c0cab712f4f983c0b2352f0ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boataoMenuPopup: {fileID: 0}
 --- !u!4 &1438130310
 Transform:
   m_ObjectHideFlags: 0

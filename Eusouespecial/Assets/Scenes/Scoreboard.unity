@@ -276,7 +276,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1039718013}
-  - component: {fileID: 1039718014}
   - component: {fileID: 1039718015}
   m_Layer: 0
   m_Name: ScoreboardPontos
@@ -298,20 +297,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1039718014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1039718012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d737f10a78c5bef4787a5d0e9594a77b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontuacao1: {fileID: 1950688890}
-  pontuacao2: {fileID: 1924521173}
-  pontuacao3: {fileID: 1483234840}
 --- !u!114 &1039718015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +319,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1157563111}
-  - component: {fileID: 1157563112}
   - component: {fileID: 1157563113}
   m_Layer: 0
   m_Name: SceneManager
@@ -356,18 +340,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1157563112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1157563110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4ea2c0cab712f4f983c0b2352f0ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boataoMenuPopup: {fileID: 0}
 --- !u!114 &1157563113
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class PersistentManagerScript : MonoBehaviour
 
     public int pontos3 = 0;
 
+    public bool triturado = false;
+
     private void Awake()
     {
         if (Instance == null)

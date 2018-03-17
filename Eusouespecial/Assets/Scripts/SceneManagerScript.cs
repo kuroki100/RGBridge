@@ -46,6 +46,15 @@ public class SceneManagerScript : MonoBehaviour
                 boataoMenuPopup.SetActive(false);
             }
         }
+
+        if (PersistentManagerScript.Instance.triturado)
+        {
+            PersistentManagerScript.Instance.triturado = false;
+            PersistentManagerScript.Instance.pontos1 = PersistentManagerScript.Instance.pontos;
+            PersistentManagerScript.Instance.pontos = 0;
+            PersistentManagerScript.Instance.vida = 3;
+            CarregarMenuDerrota();
+        }
     }
 
     public void CarregarMenuInicial()
