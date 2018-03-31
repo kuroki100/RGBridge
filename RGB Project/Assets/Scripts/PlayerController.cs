@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public float tempo;
 
     Rigidbody2D myRB;
-    SpriteRenderer myRenderer;
-    bool facingRight = true;
+   // SpriteRenderer myRenderer;
+   // bool facingRight = true;
     Animator myAnim;
     bool canMove = true;
     public bool grounded = false;
@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
 
     public float speed = 10;
-    public float jumpPower = 7;
+    public float newSpeed = 10;
+    public float jumpPower = 8;
+    public float newJumpPower = 8;
 
     //Imagem dos CCs no Canvas
     public GameObject ccRed;
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public float activeTimeB = 1;
 
     //Knockback publics
-    public float knockback = 1000;
+    public float knockback = 10;
     public Rigidbody2D Rm;
     Vector2 Direction;
 
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
         // componentes para o move e jump
         myRB = GetComponent<Rigidbody2D>();
 
-        myRenderer = GetComponent<SpriteRenderer>();
+       // myRenderer = GetComponent<SpriteRenderer>();
 
         myAnim = GetComponent<Animator>();
 
@@ -95,10 +97,10 @@ public class PlayerController : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         if (canMove)
         {
-            if (move > 0 && !facingRight)
+           /* if (move > 0 && !facingRight)
                 Flip();
             else if (move < 0 && facingRight)
-                Flip();
+                Flip();*/
 
             myRB.velocity = new Vector2(move * speed, myRB.velocity.y);
             myAnim.SetFloat("MoveSpeed", Mathf.Abs(move));
@@ -136,12 +138,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Flip()
+   /* void Flip()
     {
         facingRight = !facingRight;
         myRenderer.flipX = !myRenderer.flipX;
 
-    }
+    }*/
     public void toggleCanMove()
     {
         canMove = !canMove;
@@ -156,7 +158,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Boom");
 
-            myRB.AddForce(Direction * -knockback, ForceMode2D.Impulse);
+            myRB.AddForce(Direction * -knockback, mode: ForceMode2D.Impulse);
 
             RedShield.gameObject.SetActive(false);
 
@@ -166,12 +168,6 @@ public class PlayerController : MonoBehaviour
         {
             RedShield.gameObject.SetActive(false);
         }
-
-        //Coroutine do cooldown do nockback apenas se o jogador tocar o chão
-        //if (grounded && ccRed.activeInHierarchy)
-        //{
-        //    StartCoroutine(KnockbackCooldown());
-        //}
 
         //missil verde
         if (coll.gameObject.tag == "deadlyGreen")
@@ -186,7 +182,7 @@ public class PlayerController : MonoBehaviour
         }
         else if ((coll.gameObject.tag == "deadlyGreen") && (GreenShield.activeInHierarchy == true))
         {
-            jumpPower = 7;
+            jumpPower = newJumpPower;
             GreenShield.gameObject.SetActive(false);
         }
 
@@ -225,7 +221,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time >= RootDuration)
         {
             yield return new WaitForSeconds(RootDuration);
-            jumpPower = 7;
+            jumpPower = newJumpPower;
 
             //Desativando interface do CC
             ccGreen.SetActive(false);
@@ -239,7 +235,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time >= SlowDuration)
         {
             yield return new WaitForSeconds(SlowDuration);
-            speed = 10;
+            speed = newSpeed;
 
             //Desativando interface do CC
             ccBlue.SetActive(false);

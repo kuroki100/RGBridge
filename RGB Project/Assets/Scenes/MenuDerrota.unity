@@ -426,7 +426,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344836200
 MonoBehaviour:
@@ -460,7 +460,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOU LOSE
+  m_Text: "VOC\xCA \xC9 MUITO RUIM!"
 --- !u!222 &1344836201
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 1762775114}
   - component: {fileID: 1762775116}
   m_Layer: 5
-  m_Name: Pontuacao
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +738,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 250, y: 103.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762775114
 MonoBehaviour:
@@ -766,13 +766,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pontuacao
+  m_Text: Score
 --- !u!222 &1762775115
 CanvasRenderer:
   m_ObjectHideFlags: 0
