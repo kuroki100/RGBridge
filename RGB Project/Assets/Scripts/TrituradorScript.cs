@@ -35,7 +35,7 @@ public class TrituradorScript : MonoBehaviour
 
         if (collision.gameObject.tag == "deadlyRed" || collision.gameObject.tag == "deadlyGreen" || collision.gameObject.tag == "deadlyBlue" || collision.gameObject.tag == "OrangeMissile" || collision.gameObject.tag == "BlackMissile")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             PersistentManagerScript.Instance.pontos = PersistentManagerScript.Instance.pontos + 1;
             AtualizarPontos();
         }

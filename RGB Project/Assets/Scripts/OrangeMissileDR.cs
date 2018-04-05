@@ -15,6 +15,8 @@ public class OrangeMissileDR : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        pontuacao = GameObject.Find("Pontuacao").GetComponent<Text>();
+        vidaTexto = GameObject.Find("Vida").GetComponent<Text>();
         rigid = GetComponent<Rigidbody2D>();
     }
 

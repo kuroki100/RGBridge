@@ -19,6 +19,8 @@ public class BlackMissile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        pontuacao = GameObject.Find("Pontuacao").GetComponent<Text>();
+        vidaTexto = GameObject.Find("Vida").GetComponent<Text>();
         rigid = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
@@ -37,7 +39,7 @@ public class BlackMissile : MonoBehaviour
 
             distance = Vector3.Distance(transform.position, target.transform.position);
         }
-        if(distance <= 5)
+        if (distance <= 5)
         {
             travou = true;
             Vector2 direction = target.transform.position;

@@ -22,6 +22,6 @@ public class MenuVitoriaDerrotaPontosScript : MonoBehaviour
 
     void AtualizarPontos()
     {
-        pontuacao.text = "Score: " + PersistentManagerScript.Instance.pontos1.ToString();
+        pontuacao.text = "Score: " + PersistentManagerScript.Instance.pontosVitoriaDerrota.ToString();
     }
 }

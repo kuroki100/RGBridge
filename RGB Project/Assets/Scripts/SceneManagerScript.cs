@@ -19,17 +19,19 @@ public class SceneManagerScript : MonoBehaviour
     {
         if (PersistentManagerScript.Instance.vida <= 0)
         {
-            PersistentManagerScript.Instance.pontos1 = PersistentManagerScript.Instance.pontos;
+            PersistentManagerScript.Instance.pontosVitoriaDerrota = PersistentManagerScript.Instance.pontos;
+            PersistentManagerScript.Instance.Inserir(PersistentManagerScript.Instance.pontos);
             PersistentManagerScript.Instance.pontos = 0;
-            PersistentManagerScript.Instance.vida = 3;
+            PersistentManagerScript.Instance.vida = 5;
             CarregarMenuDerrota();
         }
 
         if (PersistentManagerScript.Instance.chegouNoFinal)
         {
-            PersistentManagerScript.Instance.pontos1 = PersistentManagerScript.Instance.pontos;
+            PersistentManagerScript.Instance.pontosVitoriaDerrota = PersistentManagerScript.Instance.pontos;
+            PersistentManagerScript.Instance.Inserir(PersistentManagerScript.Instance.pontos);
             PersistentManagerScript.Instance.pontos = 0;
-            PersistentManagerScript.Instance.vida = 3;
+            PersistentManagerScript.Instance.vida = 5;
             PersistentManagerScript.Instance.chegouNoFinal = false;
             CarregarMenuVitoria();
         }
@@ -51,9 +53,9 @@ public class SceneManagerScript : MonoBehaviour
         if (PersistentManagerScript.Instance.triturado)
         {
             PersistentManagerScript.Instance.triturado = false;
-            PersistentManagerScript.Instance.pontos1 = PersistentManagerScript.Instance.pontos;
+            PersistentManagerScript.Instance.pontosVitoriaDerrota = PersistentManagerScript.Instance.pontos;
             PersistentManagerScript.Instance.pontos = 0;
-            PersistentManagerScript.Instance.vida = 3;
+            PersistentManagerScript.Instance.vida = 5;
             CarregarMenuDerrota();
         }
     }
@@ -83,7 +85,7 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene("Cena01");
         Time.timeScale = 1;
         PersistentManagerScript.Instance.pontos = 0;
-        PersistentManagerScript.Instance.vida = 3;
+        PersistentManagerScript.Instance.vida = 5;
     }
 
     public void SairDoJogo()

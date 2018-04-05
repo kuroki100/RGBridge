@@ -1,0 +1,758 @@
+fileFormatVersion: 2
+guid: 7aa26186339fcbc4ba447bb7c8b428ad
+timeCreated: 1522695633
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Amber_0
+    21300002: Amber_1
+    21300004: Amber_2
+    21300006: Amber_3
+    21300008: Amber_4
+    21300010: Amber_5
+    21300012: Amber_6
+    21300014: Amber_7
+    21300016: Amber_8
+    21300018: Amber_9
+    21300020: Amber_10
+    21300022: Amber_11
+    21300024: Amber_12
+    21300026: Amber_13
+    21300028: Amber_14
+    21300030: Amber_15
+    21300032: Amber_16
+    21300034: Amber_17
+    21300036: Amber_18
+    21300038: Amber_19
+    21300040: Amber_20
+    21300042: Amber_21
+    21300044: Amber_22
+    21300046: Amber_23
+    21300048: Amber_24
+    21300050: Amber_25
+    21300052: Amber_26
+    21300054: Amber_27
+    21300056: Amber_28
+    21300058: Amber_29
+    21300060: Amber_30
+    21300062: Amber_31
+    21300064: Amber_32
+    21300066: Amber_33
+    21300068: Amber_34
+    21300070: Amber_35
+    21300072: Amber_36
+    21300074: Amber_37
+    21300076: Amber_38
+    21300078: Amber_39
+    21300080: Amber_40
+    21300082: Amber_41
+    21300084: Amber_42
+    21300086: Amber_43
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Amber_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 875
+        width: 98
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_1
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 879
+        width: 99
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_2
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 955
+        width: 123
+        height: 62
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 978
+        width: 26
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_4
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 979
+        width: 27
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_5
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 947
+        width: 35
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_6
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 954
+        width: 35
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_7
+      rect:
+        serializedVersion: 2
+        x: 385.11926
+        y: 749
+        width: 233.88074
+        height: 165
+      alignment: 9
+      pivot: {x: 0.50615853, y: 0.5030303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_8
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 899
+        width: 21
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_9
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 894
+        width: 33
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_10
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 890
+        width: 40
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_11
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 890
+        width: 38
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_12
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 893
+        width: 32
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_13
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 899
+        width: 22
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_14
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 859
+        width: 36
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_15
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 853
+        width: 37
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_16
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 833
+        width: 40
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_17
+      rect:
+        serializedVersion: 2
+        x: 44.000004
+        y: 647
+        width: 129
+        height: 191
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_18
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 818
+        width: 35
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_19
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 799
+        width: 40
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_20
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 624
+        width: 45
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5, y: 0.512987}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_21
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 671
+        width: 77
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_22
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 636
+        width: 50
+        height: 74
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5067568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_23
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 673
+        width: 75
+        height: 99
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_24
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 679
+        width: 74
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_25
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 679
+        width: 74
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_26
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 443
+        width: 134
+        height: 193
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_27
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 552
+        width: 67
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_28
+      rect:
+        serializedVersion: 2
+        x: 483.4131
+        y: 590.77527
+        width: 102
+        height: 68
+      alignment: 9
+      pivot: {x: 0.48124427, y: 0.488599}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_29
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 574
+        width: 65
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48936167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_30
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 435
+        width: 250
+        height: 195
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_31
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 514
+        width: 114
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_32
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 474
+        width: 118
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_33
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 475
+        width: 25
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_34
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 225
+        width: 171
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_35
+      rect:
+        serializedVersion: 2
+        x: 446.602
+        y: 356.46948
+        width: 178.8872
+        height: 110.97571
+      alignment: 9
+      pivot: {x: 0.49974513, y: 0.48236248}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_36
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 278.2459
+        width: 176.42627
+        height: 58.37686
+      alignment: 9
+      pivot: {x: 0.50729406, y: 0.44116947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_37
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 12
+        width: 175
+        height: 199
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_38
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 165
+        width: 47
+        height: 72
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_39
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 128
+        width: 53
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50775194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_40
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 180
+        width: 34
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_41
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 128
+        width: 53
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4811321, y: 0.50775194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_42
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 43
+        width: 75
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47959182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Amber_43
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 43
+        width: 75
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 99808773013504
+  assetBundleName: 
+  assetBundleVariant: 

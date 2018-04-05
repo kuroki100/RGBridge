@@ -12,6 +12,7 @@ public class ScoreboardPontosScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        PersistentManagerScript.Instance.Inserir(PersistentManagerScript.Instance.pontosVitoriaDerrota);
         AtualizarPontos();
     }
 
@@ -23,8 +24,8 @@ public class ScoreboardPontosScript : MonoBehaviour
 
     void AtualizarPontos()
     {
-        pontuacao1.text = "Score 1: " + PersistentManagerScript.Instance.pontos1.ToString();
-        pontuacao2.text = "Score 1: " + PersistentManagerScript.Instance.pontos2.ToString();
-        pontuacao3.text = "Score 1: " + PersistentManagerScript.Instance.pontos3.ToString();
+        pontuacao1.text = "Score 1: " + PersistentManagerScript.Instance.scoreboardPontos[0].ToString();
+        pontuacao2.text = "Score 1: " + PersistentManagerScript.Instance.scoreboardPontos[1].ToString();
+        pontuacao3.text = "Score 1: " + PersistentManagerScript.Instance.scoreboardPontos[2].ToString();
     }
 }

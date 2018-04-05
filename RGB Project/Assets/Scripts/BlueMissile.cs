@@ -26,6 +26,10 @@ public class BlueMissile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        pontuacao = GameObject.Find("Pontuacao").GetComponent<Text>();
+        vidaTexto = GameObject.Find("Vida").GetComponent<Text>();
+        ccInterface = GameObject.Find("ccBlue");
+
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
 
