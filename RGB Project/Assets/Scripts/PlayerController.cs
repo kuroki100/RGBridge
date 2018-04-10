@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public float tempo;
 
     Rigidbody2D myRB;
-    SpriteRenderer myRenderer;
-    bool facingRight = true;
+    //SpriteRenderer myRenderer;
+    //bool facingRight = true;
     Animator myAnim;
     bool canMove = true;
     public bool grounded = false;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10;
     public float jumpPower = 7;
+    public int jumpCount = 0;
 
     //Imagem dos CCs no Canvas
     public GameObject ccRed;
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
     //Knockback publics
     public float knockback = 1000;
     public Rigidbody2D Rm;
-    Vector2 Direction;
+    //Vector2 Direction;
 
     //slow publics
     public float SlowDuration = 1f;
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
         // componentes para o move e jump
         myRB = GetComponent<Rigidbody2D>();
 
-        myRenderer = GetComponent<SpriteRenderer>();
+        //myRenderer = GetComponent<SpriteRenderer>();  
 
         myAnim = GetComponent<Animator>();
 
@@ -68,7 +70,7 @@ public class PlayerController : MonoBehaviour
         BlueShield.gameObject.SetActive(false);
 
         //vector2 missil vermelho
-        Direction = Rm.transform.position + myRB.transform.position;
+        //Direction = Rm.transform.position + myRB.transform.position;
     }
 
 
@@ -78,12 +80,18 @@ public class PlayerController : MonoBehaviour
         tempo = Time.time;
 
         //ground check and jump
-        if (grounded && Input.GetAxis("Jump") > 0)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount < 1)
         {
+            jumpCount++;
             myAnim.SetBool("isGrounded", false);
             myRB.velocity = new Vector2(myRB.velocity.x, 0f);
             myRB.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
             grounded = false;
+        }
+
+        if (grounded)
+        {
+            jumpCount = 0;
         }
 
 
@@ -95,10 +103,14 @@ public class PlayerController : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         if (canMove)
         {
-            if (move > 0 && !facingRight)
-                Flip();
-            else if (move < 0 && facingRight)
-                Flip();
+            if (move < 0)
+            {
+                transform.localScale = new Vector3(-0.25f, 0.25f, z: 0.25f);
+            }
+            else if (move > 0)
+            {
+                transform.localScale = new Vector3(0.25f, 0.25f, z: 0.25f);
+            }
 
             myRB.velocity = new Vector2(move * speed, myRB.velocity.y);
             myAnim.SetFloat("MoveSpeed", Mathf.Abs(move));
@@ -128,21 +140,9 @@ public class PlayerController : MonoBehaviour
             BlueShield.gameObject.SetActive(true);
             StartCoroutine(BlueCooldown());
         }
-
-
-
-
-
-
     }
 
-    void Flip()
-    {
-        facingRight = !facingRight;
-        myRenderer.flipX = !myRenderer.flipX;
-
-    }
-    public void toggleCanMove()
+    public void ToggleCanMove()
     {
         canMove = !canMove;
     }
@@ -156,22 +156,22 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Boom");
 
-            myRB.AddForce(Direction * -knockback, ForceMode2D.Impulse);
+            //myRB.AddForce(Direction * -knockback, ForceMode2D.Impulse);
+
+            Vector2 forca = new Vector2(10, 10);
+
+            myRB.AddForce(forca, ForceMode2D.Impulse);
+
+            speed = 0;
 
             Destroy(coll.gameObject, 0.01f);
 
             StartCoroutine(KnockbackCooldown());
         }
-        else if ((coll.gameObject.tag == "deadlyRed") && (ccRed.activeInHierarchy == true))
+        else if ((coll.gameObject.tag == "deadlyRed") && (ccRed.gameObject.GetComponent<Image>().enabled == true))
         {
             RedShield.gameObject.SetActive(false);
         }
-
-        //Coroutine do cooldown do nockback apenas se o jogador tocar o chão
-        //if (grounded && ccRed.activeInHierarchy)
-        //{
-        //    StartCoroutine(KnockbackCooldown());
-        //}
 
         //missil verde
         if (coll.gameObject.tag == "deadlyGreen")
@@ -210,12 +210,14 @@ public class PlayerController : MonoBehaviour
     //duração do CC missil vermelho
     IEnumerator KnockbackCooldown()
     {
-        if (ccRed.gameObject.activeInHierarchy == true)
+        if (ccRed.gameObject.GetComponent<Image>().enabled == true)
         {
             yield return new WaitForSeconds(1);
 
+            speed = 10;
+
             //Desativando interface do CC
-            ccRed.SetActive(false);
+            ccRed.gameObject.GetComponent<Image>().enabled = false;
         }
     }
 
@@ -228,7 +230,7 @@ public class PlayerController : MonoBehaviour
             jumpPower = 7;
 
             //Desativando interface do CC
-            ccGreen.SetActive(false);
+            ccGreen.gameObject.GetComponent<Image>().enabled = false;
         }
 
     }
@@ -242,7 +244,7 @@ public class PlayerController : MonoBehaviour
             speed = 10;
 
             //Desativando interface do CC
-            ccBlue.SetActive(false);
+            ccBlue.gameObject.GetComponent<Image>().enabled = false;
         }
     }
 

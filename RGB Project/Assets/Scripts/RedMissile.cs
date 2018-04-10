@@ -55,7 +55,7 @@ public class RedMissile : MonoBehaviour
             Destroy(this.gameObject, 0.01f);
             if (coll.gameObject.tag == "Player")
             {
-                ccInterface.SetActive(true);
+                ccInterface.gameObject.GetComponent<Image>().enabled = true;
                 PersistentManagerScript.Instance.vida = PersistentManagerScript.Instance.vida - 1;
                 AtualizarVida();
             }

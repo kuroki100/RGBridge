@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
@@ -282,10 +283,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Anima2D\Examples\Scripts\CharacterMotion.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\Follow.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\SkinnedMeshCombiner.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\SpringBone.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\SpringCollider.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\SpringManager.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\SpriteCycle.cs" />
+    <Compile Include="Assets\Anima2D\Examples\Scripts\SpriteCycleParallax.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\Bone2D.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\Control.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\EditorUpdaterProxy.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\Ik2D.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\IkCCD2D.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\IkGroup.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\IkLimb2D.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\IkSolver2D.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\IkSolver2DCCD.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\IkSolver2DLimb.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\MathUtils.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\Pose.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\PoseManager.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\SpriteMesh.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\SpriteMeshAnimation.cs" />
+    <Compile Include="Assets\Anima2D\Scripts\SpriteMeshInstance.cs" />
     <Compile Include="Assets\Scripts\BarraScript.cs" />
     <Compile Include="Assets\Scripts\BlackMissile.cs" />
     <Compile Include="Assets\Scripts\BlueMissile.cs" />
     <Compile Include="Assets\Scripts\CameraFollows.cs" />
+    <Compile Include="Assets\Scripts\ColetavelBlue.cs" />
+    <Compile Include="Assets\Scripts\ColetavelGreen.cs" />
+    <Compile Include="Assets\Scripts\ColetavelRed.cs" />
     <Compile Include="Assets\Scripts\Cooldown.cs" />
     <Compile Include="Assets\Scripts\FinalFaseScript.cs" />
     <Compile Include="Assets\Scripts\GreenMissile.cs" />
@@ -301,9 +329,19 @@
     <Compile Include="Assets\Scripts\SceneManagerScript.cs" />
     <Compile Include="Assets\Scripts\ScoreboardPontosScript.cs" />
     <Compile Include="Assets\Scripts\SpawnerTriggerScript.cs" />
+    <Compile Include="Assets\Scripts\SpawnMissiles.cs" />
     <Compile Include="Assets\Scripts\TrituradorScript.cs" />
     <Compile Include="Assets\Scripts\WallLeft.cs" />
     <Compile Include="Assets\Scripts\WallRight.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Anima2D\Examples\Shaders\Unlit-Alpha-Cull-off.shader" />
+    <None Include="Assets\Anima2D\Examples\Shaders\VertexLitOneDirectional.shader" />
+    <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
+    <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
+    <None Include="Assets\Anima2D\Licenses.txt" />
+    <None Include="Assets\Anima2D\Readme.txt" />
+    <None Include="Assets\Anima2D\Version.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

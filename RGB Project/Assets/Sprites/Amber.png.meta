@@ -152,12 +152,12 @@ TextureImporter:
       name: Amber_1
       rect:
         serializedVersion: 2
-        x: 231
-        y: 879
-        width: 99
-        height: 138
+        x: 230
+        y: 877
+        width: 102
+        height: 142
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.49509805, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: Amber_2
       rect:
         serializedVersion: 2
-        x: 451
-        y: 955
-        width: 123
-        height: 62
+        x: 449
+        y: 954
+        width: 127
+        height: 65
       alignment: 9
-      pivot: {x: 0.49999997, y: 0.5}
+      pivot: {x: 0.5, y: 0.4923077}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -474,10 +474,10 @@ TextureImporter:
       name: Amber_24
       rect:
         serializedVersion: 2
-        x: 830
-        y: 679
-        width: 74
-        height: 88
+        x: 828
+        y: 677
+        width: 78
+        height: 92
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +488,10 @@ TextureImporter:
       name: Amber_25
       rect:
         serializedVersion: 2
-        x: 947
-        y: 679
-        width: 74
-        height: 88
+        x: 945
+        y: 677
+        width: 78
+        height: 92
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,10 +504,10 @@ TextureImporter:
         serializedVersion: 2
         x: 163
         y: 443
-        width: 134
-        height: 193
+        width: 136
+        height: 195
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.49264705, y: 0.49487182}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,12 +530,12 @@ TextureImporter:
       name: Amber_28
       rect:
         serializedVersion: 2
-        x: 483.4131
-        y: 590.77527
+        x: 482.32617
+        y: 591.05054
         width: 102
         height: 68
       alignment: 9
-      pivot: {x: 0.48124427, y: 0.488599}
+      pivot: {x: 0.4919003, y: 0.48455092}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -572,10 +572,10 @@ TextureImporter:
       name: Amber_31
       rect:
         serializedVersion: 2
-        x: 476
-        y: 514
-        width: 114
-        height: 50
+        x: 474
+        y: 512
+        width: 118
+        height: 54
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,12 +628,12 @@ TextureImporter:
       name: Amber_35
       rect:
         serializedVersion: 2
-        x: 446.602
+        x: 443.5782
         y: 356.46948
-        width: 178.8872
-        height: 110.97571
+        width: 181.91101
+        height: 118.23566
       alignment: 9
-      pivot: {x: 0.49974513, y: 0.48236248}
+      pivot: {x: 0.5080606, y: 0.4527443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -642,12 +642,12 @@ TextureImporter:
       name: Amber_36
       rect:
         serializedVersion: 2
-        x: 448
-        y: 278.2459
-        width: 176.42627
-        height: 58.37686
+        x: 447.71313
+        y: 281.18024
+        width: 178
+        height: 45
       alignment: 9
-      pivot: {x: 0.50729406, y: 0.44116947}
+      pivot: {x: 0.5044206, y: 0.5071059}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -656,12 +656,12 @@ TextureImporter:
       name: Amber_37
       rect:
         serializedVersion: 2
-        x: 111
-        y: 12
-        width: 175
-        height: 199
+        x: 110
+        y: 10
+        width: 178
+        height: 203
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.497191, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -689,7 +689,7 @@ TextureImporter:
         width: 53
         height: 129
       alignment: 9
-      pivot: {x: 0.5, y: 0.50775194}
+      pivot: {x: 0.5212725, y: 0.5164919}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -726,12 +726,12 @@ TextureImporter:
       name: Amber_42
       rect:
         serializedVersion: 2
-        x: 436
+        x: 435.10693
         y: 43
-        width: 75
+        width: 75.89307
         height: 49
       alignment: 9
-      pivot: {x: 0.5, y: 0.47959182}
+      pivot: {x: 0.50588375, y: 0.47959182}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -753,6 +753,6 @@ TextureImporter:
     outline: []
     physicsShape: []
   spritePackingTag: 
-  userData: 99808773013504
+  userData: 99816017662137
   assetBundleName: 
   assetBundleVariant: 

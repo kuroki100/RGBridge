@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WallRight : MonoBehaviour
 {
-    Rigidbody2D rigid;
+    //Rigidbody2D rigid;
     public GameObject player;
     public PlayerController playerScript;
     public Text pontuacao;
@@ -14,7 +14,7 @@ public class WallRight : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
+        //rigid = GetComponent<Rigidbody2D>();
         AtualizarPontos();
         AtualizarVida();
     }

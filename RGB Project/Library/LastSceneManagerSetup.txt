@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Anima.unity
+- path: Assets/Scenes/MenuDerrota.unity
   isLoaded: 1
   isActive: 1

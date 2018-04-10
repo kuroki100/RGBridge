@@ -51,6 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Anima2D\Examples\Scripts\CharacterMotion.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\Follow.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\SkinnedMeshCombiner.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\SpringBone.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\SpringCollider.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\SpringManager.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\SpriteCycle.cs" />
+     <Compile Include="Assets\Anima2D\Examples\Scripts\SpriteCycleParallax.cs" />
      <Compile Include="Assets\Anima2D\Scripts\Bone2D.cs" />
      <Compile Include="Assets\Anima2D\Scripts\Control.cs" />
      <Compile Include="Assets\Anima2D\Scripts\EditorUpdaterProxy.cs" />
@@ -71,6 +79,9 @@
      <Compile Include="Assets\Scripts\BlackMissile.cs" />
      <Compile Include="Assets\Scripts\BlueMissile.cs" />
      <Compile Include="Assets\Scripts\CameraFollows.cs" />
+     <Compile Include="Assets\Scripts\ColetavelBlue.cs" />
+     <Compile Include="Assets\Scripts\ColetavelGreen.cs" />
+     <Compile Include="Assets\Scripts\ColetavelRed.cs" />
      <Compile Include="Assets\Scripts\Cooldown.cs" />
      <Compile Include="Assets\Scripts\FinalFaseScript.cs" />
      <Compile Include="Assets\Scripts\GreenMissile.cs" />
@@ -86,11 +97,16 @@
      <Compile Include="Assets\Scripts\SceneManagerScript.cs" />
      <Compile Include="Assets\Scripts\ScoreboardPontosScript.cs" />
      <Compile Include="Assets\Scripts\SpawnerTriggerScript.cs" />
+     <Compile Include="Assets\Scripts\SpawnMissiles.cs" />
      <Compile Include="Assets\Scripts\TrituradorScript.cs" />
      <Compile Include="Assets\Scripts\WallLeft.cs" />
      <Compile Include="Assets\Scripts\WallRight.cs" />
+     <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
+     <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
      <None Include="Assets\Anima2D\Version.txt" />
+     <None Include="Assets\Anima2D\Examples\Shaders\Unlit-Alpha-Cull-off.shader" />
      <None Include="Assets\Anima2D\Licenses.txt" />
+     <None Include="Assets\Anima2D\Examples\Shaders\VertexLitOneDirectional.shader" />
      <None Include="Assets\Anima2D\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

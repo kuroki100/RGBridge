@@ -18,6 +18,7 @@ public class OrangeMissileDR : MonoBehaviour
         pontuacao = GameObject.Find("Pontuacao").GetComponent<Text>();
         vidaTexto = GameObject.Find("Vida").GetComponent<Text>();
         rigid = GetComponent<Rigidbody2D>();
+        transform.Rotate(0, 0, 315);
     }
 
     // Update is called once per frame
